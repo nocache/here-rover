@@ -24,6 +24,10 @@ gem 'rails_config'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #gem 'spring',        group: :development
 
+group :development do
+  gem 'minitest-spec-rails'
+  gem 'minitest-spec-expect'
+end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
