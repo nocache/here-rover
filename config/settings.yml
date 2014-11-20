@@ -1,0 +1,3 @@
+locator:
+  vehicle:
+    http://cndlunarlocator.herokuapp.com/vehicles/{{vehicle_id}}/locate.json
