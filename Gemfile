@@ -18,16 +18,28 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'rails_config'
 
+gem 'oj'
+gem 'multi_json'
+gem 'faraday'
+
 # Use jquery as the JavaScript library
 #gem 'jquery-rails'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 #gem 'spring',        group: :development
 
+gem 'pry'
+
 group :development do
+  # Use debugger
+  # gem 'debugger', group: [:development, :test]
+end
+
+group :test do
   gem 'minitest-spec-rails'
   gem 'minitest-spec-expect'
+  gem 'minitest-vcr'
+  gem 'webmock'
+  gem 'mocha'
 end
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 
