@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class LocationsControllerTest < ActionController::TestCase
-  test "should get index" do
+describe LocationsController do
+  it "should get index" do
     get :index
     assert_response :success
   end
 
-  test "should get show" do
+  it "should get show" do
     get :show
     assert_response :success
   end
