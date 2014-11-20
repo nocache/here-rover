@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.footer {
+  color: $gray-light;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  font-height: 13px;
+  padding: 15px 15px;
+  background-color: #f5f5f5;
+}
