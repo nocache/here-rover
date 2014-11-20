@@ -11,25 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119025847) do
+ActiveRecord::Schema.define(version: 20141119080743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "locations", force: true do |t|
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "body",       limit: 16, default: "luna"
+    t.float    "lat"
+    t.float    "long"
+    t.string   "type",       limit: 16, default: "LunarLocation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rover_id"
   end
 
-  add_index "locations", ["body"], name: "index_locations_on_body", using: :btree
-  add_index "locations", ["latitude", "longitude"], name: "index_locations_on_latitude_and_longitude", using: :btree
+  add_index "locations", ["lat", "long"], name: "index_locations_on_lat_and_long", using: :btree
+  add_index "locations", ["rover_id", "updated_at"], name: "index_locations_on_rover_id_and_updated_at", using: :btree
+  add_index "locations", ["type"], name: "index_locations_on_type", using: :btree
 
   create_table "rovers", force: true do |t|
     t.integer  "vehicle_id"
-    t.integer  "locations_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

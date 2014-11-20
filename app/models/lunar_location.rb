@@ -1,0 +1,2 @@
+class LunarLocation < Location
+end
