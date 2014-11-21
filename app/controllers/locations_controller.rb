@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    rovers = Rover.vehicle(vehicle_id_params) || Rover.all
+    rovers = Rover.vehicle(vehicle_id_params)
     @placemarks = Placemark.build_list(rovers)
   end
 
