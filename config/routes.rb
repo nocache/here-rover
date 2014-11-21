@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'locations/index'
-
-  get 'locations/show'
+  root 'locations#index'
+  get 'locations' => 'locations#index'
+  get 'locations/rover/:vehicle_id' => 'locations#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
