@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ = jQuery
+$ ->
+  $('#rover-select').on('click','li>a', ->
+    clicked = $(this)
+    console.log "#{clicked.data('vid')} clicked"
+    # remove active from all links
+    clicked.parent().siblings().removeClass('active')
+    # add active to the link clicked
+    clicked.parent().addClass('active')
+    null
+  )
+

@@ -1,6 +1,6 @@
-<ul class="nav navbar-nav navbar-right">
-  <li class="active"><a href="#">All</a></li>
+<ul id="rover-select" class="nav navbar-nav navbar-right">
+  <li class="active"><a href="#all" data-vid="all">All</a></li>
   <% Rover.order(:vehicle_id).each do |rover| %>
-    <li><a href="#rover-<%= rover.vehicle_id %>">Rover <%= rover.vehicle_id %></a></li>
+    <li><a href="#rover" data-vid="<%= rover.vehicle_id %>">Rover <%= rover.vehicle_id %></a></li>
   <% end %>
 </ul>
