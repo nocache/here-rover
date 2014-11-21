@@ -20,7 +20,7 @@ class Placemark
       lat = @place.latest_location.try :lat
       long = @place.latest_location.try :long
     end
-    "#{lat},#{long}"
+    "#{long},#{lat}"
   end
 
   def_delegator :@place, :vehicle_id, :id
