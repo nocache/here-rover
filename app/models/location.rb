@@ -2,6 +2,8 @@ class Location < ActiveRecord::Base
   belongs_to :rover
   include Locator
 
+  scope :actual, ->{ where('lat IS NOT NULL AND long IS NOT NULL') }
+
   private
 
   def locator_url
