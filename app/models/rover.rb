@@ -1,11 +1,12 @@
 class Rover < ActiveRecord::Base
   has_many :locations
+  has_many :actual_locations, -> { Location.actual }, class_name:'Location'
 
   def latest_location(type='LunarLocation')
-    if locations.empty?
+    if actual_locations.empty?
       locations.build(type:type).refresh!
     else
-      self.locations.order(:updated_at).last
+      actual_locations.order(:updated_at).last
     end
   end
 
