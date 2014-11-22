@@ -29,13 +29,12 @@ function failureCB(errorCode) {
 }
 
 function showApollo11() {
-   lookAt = ge.createLookAt('');
-   lookAt.set(0.681400, 23.460550, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -1.946649, 0, 130);
-   ge.getView().setAbstractView(lookAt);
+  lookAt = ge.createLookAt('');
+  // Aitken Basin:
+  // lookAt.set(-16.800000, 173.400000, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -4.378803, 0, 135000);
+  lookAt.set(0.681400, 23.460550, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -1.946649, 0, 130);
+  ge.getView().setAbstractView(lookAt);
 }
 
 google.setOnLoadCallback(init);
 
-// Aitken Basin:
-// lookAt.set(-16.800000, 173.400000, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -4.378803, 0, 135000);
-//
