@@ -11,7 +11,7 @@ class Rover < ActiveRecord::Base
   end
 
   def self.vehicle(vid)
-    if vid == 'all'
+    if vid.empty? || vid == 'all'
       all
     else
       find_by(vehicle_id:vid)
