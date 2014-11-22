@@ -13,8 +13,11 @@ function initCB(instance) {
   ge.getNavigationControl().setVisibility(ge.VISIBILITY_SHOW);
 
   var link = ge.createLink('');
-  var href = 'rover/all.kml';
-  link.setHref(href);
+
+  // Get the location info via a KML response:
+  //  the url should be set in the view, because it doesn't work if it is
+  //  a relative url
+  link.setHref(kml_url);
 
   var networkLink = ge.createNetworkLink('');
   networkLink.set(link, true, true); // Sets the link, refreshVisibility, and flyToView.
