@@ -1,5 +1,5 @@
 
-var ge;
+var ge; // global var to hold Google Earth plugin instance
 var lookAt;
 google.load("earth", "1", {"other_params":"sensor=false"});
 
@@ -12,6 +12,18 @@ function initCB(instance) {
   ge.getWindow().setVisibility(true);
   ge.getNavigationControl().setVisibility(ge.VISIBILITY_SHOW);
 
+  loadKml();
+}
+
+function reLoadKml(kml) {
+  if (kml) {
+    removeAllFeatures();
+    kml_url = kml;
+    loadKml();
+  }
+}
+
+function loadKml() {
   var link = ge.createLink('');
 
   // Get the location info via a KML response:
@@ -26,6 +38,12 @@ function initCB(instance) {
 }
 
 function failureCB(errorCode) {
+}
+
+function removeAllFeatures() {
+  features = ge.getFeatures();
+  while ( features.getFirstChild() )
+    features.removeChild(features.getFirstChild());
 }
 
 function showApollo11() {
