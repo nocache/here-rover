@@ -1,4 +1,4 @@
 <%= javascript_tag do %>
-  var kml_url = '<%= rover_url('all') %>.kml';
+  var kml_url = '<%= rover_url('all', :format => :kml) %>';
 <% end %>
 <div id="map3d"></div>

@@ -2,7 +2,7 @@ $ = jQuery
 $ ->
   $('#rover-select').on('click','li>a', ->
     clicked = $(this)
-    console.log "#{clicked.data('vid')} clicked"
+    reLoadKml(clicked.data('url'))
     # remove active from all links
     clicked.parent().siblings().removeClass('active')
     # add active to the link clicked

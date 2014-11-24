@@ -17,4 +17,8 @@ class Rover < ActiveRecord::Base
       find_by(vehicle_id:vid)
     end
   end
+
+  def to_param
+    vehicle_id
+  end
 end
