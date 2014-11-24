@@ -2,13 +2,15 @@ require 'forwardable'
 
 class Placemark
   extend Forwardable
-  attr_accessor :place
 
-  def initialize(place=nil)
+  attr_accessor :place
+  def_delegator :@place, :vehicle_id, :id
+
+  def initialize(place = nil)
     @place = place
   end
 
-  def self.build_list(places=[])
+  def self.build_list(places = [])
     Array(places).collect do |place|
       new(place)
     end
@@ -23,9 +25,8 @@ class Placemark
     "#{long},#{lat}"
   end
 
-  def_delegator :@place, :vehicle_id, :id
-
   def name
    "#{@place.class.name} #{self.id}"
   end
 end
+
