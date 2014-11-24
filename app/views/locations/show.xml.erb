@@ -26,5 +26,15 @@
     <% end %>
   </Folder>
 
+  <Folder>
+    <name>CND Command Centre</name>
+    <Placemark>
+      <name><%= @cmd_centre.place.name %></name>
+      <Point>
+        <coordinates><%= @cmd_centre.coords %>,0</coordinates>
+      </Point>
+    </Placemark>
+  </Folder>
+
 </Document> 
 </kml>

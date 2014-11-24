@@ -6,6 +6,8 @@ class LocationsController < ApplicationController
   def show
     rovers = Rover.vehicle(vehicle_id_params)
     @placemarks = Placemark.build_list(rovers)
+
+    @cmd_centre = Placemark.new(PointOfInterest.find_by(name:'CND Command Centre'))
   end
 
   private
