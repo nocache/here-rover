@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require google_earth
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .

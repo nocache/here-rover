@@ -1,7 +1,6 @@
 
 var ge; // global var to hold Google Earth plugin instance
-var lookAt;
-google.load("earth", "1", {"other_params":"sensor=false"});
+google.load('earth', '1', {'other_params':'sensor=false'});
 
 function init() {
   google.earth.createInstance('map3d', initCB, failureCB, { database: 'http://khmdb.google.com/?db=moon' });
