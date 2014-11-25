@@ -19,6 +19,7 @@
     <% @placemarks.each do |placemark| %>
     <Placemark id="<%= placemark.id %>">
       <name><%= placemark.name %></name>
+      <%= content_tag(:description, placemark.description) if placemark.description %>
       <Point>
         <coordinates><%= placemark.coords %>,0</coordinates>
       </Point>
