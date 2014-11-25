@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+  layout false, :only => :show
+
   def index
 
   end

@@ -1,6 +1,6 @@
 <ul id="rover-select" class="nav navbar-nav navbar-right">
-  <li class="active"><a href="#all" data-url="<%= rover_url('all', :format => :kml) %>">All</a></li>
-  <% Rover.order(:vehicle_id).each do |rover| %>
-    <li><a href="#rover" data-url="<%= rover_url(rover, :format => :kml) %>">Rover <%= rover.vehicle_id %></a></li>
+  <li class="active"><a href="#all" data-url="<%= rover_url('all') %>">All</a></li>
+  <% Rover.order(:vehicle_id).pluck(:vehicle_id).each do |vid| %>
+    <li><a href="#rover" data-url="<%= rover_url(vid) %>">Rover <%= vid %></a></li>
   <% end %>
 </ul>

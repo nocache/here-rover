@@ -1,0 +1,14 @@
+<div class="list-group">
+  <% @placemarks.each do |placemark| %>
+    <a href="#" class="list-group-item">
+      <h4 class="list-group-item-heading"><%= placemark.name %></h4>
+      <!--p class="list-group-item-text">
+        ID: <%= placemark.id %>
+      </p-->
+      <%= content_tag(:p, placemark.description, class:'list-group-item-text') if placemark.description %>
+      <p class="list-group-item-text coordinates">
+        coordinates: <%= placemark.coords %>
+      </p>
+    </a>
+  <% end %>
+</div>
