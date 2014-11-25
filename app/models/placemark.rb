@@ -6,13 +6,14 @@ class Placemark
   attr_accessor :place
   def_delegator :@place, :vehicle_id, :id
 
-  def initialize(place = nil)
+  def initialize(place = nil, command_centre_poi = nil)
     @place = place
+    @command_centre_poi = command_centre_poi
   end
 
-  def self.build_list(places = [])
+  def self.build_list(places = [], command_centre_poi = nil)
     Array(places).collect do |place|
-      new(place)
+      new(place, command_centre_poi)
     end
   end
 
