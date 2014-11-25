@@ -37,15 +37,27 @@ function loadKml() {
 }
 
 function failureCB(errorCode) {
+  console.log(errorCode);
+  document.getElementById('map3d').style.display = 'none';
+  // Chrome for MacOS has gone 64-bit and the google earth plugin will not work any more
+  if (window.navigator.appVersion.match(/Intel Mac OS X.*Chrome/)) {
+    document.getElementById('chrome-for-mac').style.display = 'block';
+  }
+  else {
+    document.getElementById('ge-plugin-error').style.display = 'block';
+  }
 }
 
 function removeAllFeatures() {
-  features = ge.getFeatures();
-  while ( features.getFirstChild() )
-    features.removeChild(features.getFirstChild());
+  if (ge !== undefined) {
+    features = ge.getFeatures();
+    while ( features.getFirstChild() )
+      features.removeChild(features.getFirstChild());
+  }
 }
 
 function showApollo11() {
+  var lookAt;
   lookAt = ge.createLookAt('');
   // Aitken Basin:
   // lookAt.set(-16.800000, 173.400000, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, -4.378803, 0, 135000);
