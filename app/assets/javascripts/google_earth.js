@@ -38,14 +38,23 @@ function loadKml() {
 
 function failureCB(errorCode) {
   console.log(errorCode);
-  document.getElementById('map3d').style.display = 'none';
+  hideDiv('map3d');
   // Chrome for MacOS has gone 64-bit and the google earth plugin will not work any more
+  displayDiv('alt-content')
   if (window.navigator.appVersion.match(/Intel Mac OS X.*Chrome/)) {
-    document.getElementById('chrome-for-mac').style.display = 'block';
+    displayDiv('chrome-for-mac');
   }
   else {
-    document.getElementById('ge-plugin-error').style.display = 'block';
+    displayDiv('ge-plugin-error')
   }
+}
+
+function hideDiv(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function displayDiv(id) {
+  document.getElementById(id).style.display = 'block';
 }
 
 function removeAllFeatures() {
