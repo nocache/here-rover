@@ -1,5 +1,5 @@
 <%= javascript_tag do %>
-  var kml_url = '<%= rover_url('all') %>';
+  var kml_url = '<%= rover_url('all', :format => :kml) %>';
 <% end %>
 <div id="map3d"></div>
 <div id="chrome-for-mac" style="display:none" class="alert alert-danger alert-dismissible" role="alert">

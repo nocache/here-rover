@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   layout false, :only => :show
+  respond_to :html, :kml
 
   def index
 
